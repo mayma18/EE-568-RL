@@ -112,19 +112,11 @@ def align_with_dpo_pipeline(
         # Training loop with tqdm
         train_loader_tqdm = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs} [Train]", leave=False)
         for batch in train_loader_tqdm:
-            state, t_w, t_l = batch
-            state.to(device)
-            t_w.to(device)
-            t_l.to(device)
-            #TODO : need to adjust to state, t_w, t_l , maybe we should modify Trajectory Scorer
-            
-            
-            
-            
-            obs_pref = batch["obs_pref"].to(device)
-            act_pref = batch["act_pref"].to(device)
-            obs_rej = batch["obs_rej"].to(device)
-            act_rej = batch["act_rej"].to(device)
+        
+            obs_pref = batch["obs_w"].to(device)
+            act_pref = batch["act_w"].to(device)
+            obs_rej = batch["obs_l"].to(device)
+            act_rej = batch["act_l"].to(device)
 
             log_pi_pref = pi_scorer(obs_pref, act_pref)
             log_pi_rej = pi_scorer(obs_rej, act_rej)

@@ -29,7 +29,7 @@ def train_sb3_policy(
     save_path: str,
     seed: int = 42,
     log_wandb: bool = True,
-    wandb_project: str = "sb3-training"
+    wandb_project: str = "dpo-training"
 ):
     # Set seeds
     random.seed(seed)

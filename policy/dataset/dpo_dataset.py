@@ -3,6 +3,9 @@ from torch.utils.data import Dataset
 import pickle
 import pandas as pd
 import ast
+from torch.nn.utils.rnn import pad_sequence
+
+
 class DpoTrajectoryDataset(Dataset):
     def __init__(self, pkl_path):
         """
@@ -64,6 +67,26 @@ class PrefDataset(Dataset):
         return self.samples[idx]
     
 def collate_fn(batch):
-    # batch is a list of tuples: (initial_state_tensor, traj_w_tensor_list, traj_l_tensor_list)
-    initial_states, traj_ws, traj_ls = zip(*batch)
-    return list(initial_states), list(traj_ws), list(traj_ls)
+    initial_states, traj_ws, traj_ls = zip(*batch) 
+
+    def split_traj(trajs): #[B, T,(state, action)]
+        obs_list = []
+        act_list = []
+        for traj in trajs:
+            obs, act = zip(*traj)  # unzip list of (obs, act)
+            obs_list.append(torch.stack(obs))  # list([T, obs_dim])
+            act_list.append(torch.stack(act))  # list([T]) or list([T, act_dim])
+        #we pad with zero
+        return pad_sequence(obs_list, batch_first=True), pad_sequence(act_list, batch_first=True)
+
+
+    obs_ws, act_ws = split_traj(traj_ws)  # [B, T_max, obs_dim], [B, T_max]
+    obs_ls, act_ls= split_traj(traj_ls)
+
+    return {
+        "initial_state": torch.stack(initial_states),  # [B, obs_dim]
+        "obs_pref": obs_ws,
+        "act_pref": act_ws,
+        "obs_rej": obs_ls,
+        "act_rej": act_ls
+    }
