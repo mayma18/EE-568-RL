@@ -1,0 +1,19 @@
+{"time":"2025-05-06T15:35:31.587572912+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-05-06T15:35:31.587579651+02:00","level":"INFO","msg":"created symlink","path":"/home/menzzz/2024/learning/RL/project/wandb/run-20250506_153531-qtc7rd8v/logs/debug-core.log"}
+{"time":"2025-05-06T15:35:31.689758026+02:00","level":"INFO","msg":"created new stream","id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:31.689776461+02:00","level":"INFO","msg":"stream: started","id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:31.689874396+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:31.689924965+02:00","level":"INFO","msg":"handler: started","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:31.689928739+02:00","level":"INFO","msg":"sender: started","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:32.72011128+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-06T15:35:42.963585125+02:00","level":"INFO","msg":"stream: closing","id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:42.96363206+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-06T15:35:42.964069669+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-06T15:35:43.387493426+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-05-06T15:35:43.387514792+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-05-06T15:35:43.387521818+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-05-06T15:35:44.393665038+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-06T15:35:44.83511064+02:00","level":"INFO","msg":"handler: closed","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:44.83516966+02:00","level":"INFO","msg":"sender: closed","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:44.83514472+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qtc7rd8v"}
+{"time":"2025-05-06T15:35:44.835281823+02:00","level":"INFO","msg":"stream: closed","id":"qtc7rd8v"}

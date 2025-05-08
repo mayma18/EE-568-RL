@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/menzzz/2024/learning/RL/project/policy/train.py", line 172, in <module>
+    train_dpo_pipeline(
+  File "/home/menzzz/2024/learning/RL/project/policy/train.py", line 57, in train_dpo_pipeline
+    full_dataset = DpoTrajectoryDataset(dpo_dataset_path)
+  File "/home/menzzz/2024/learning/RL/project/policy/dataset/dpo_dataset.py", line 19, in __init__
+    with open(pkl_path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/menzzz/2024/learning/RL/project/data/preference_pairs_ppo_pendulum_v1_600k_vs_ppo_pendulum_v1_300k.pkl'

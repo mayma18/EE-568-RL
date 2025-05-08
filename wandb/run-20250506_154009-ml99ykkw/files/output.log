@@ -1,0 +1,59 @@
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/core.py:317: DeprecationWarning: [33mWARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/wrappers/step_api_compatibility.py:39: DeprecationWarning: [33mWARN: Initializing environment in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:241: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+[Epoch 1/50] Train Loss: 1.0544 | Val Loss: 0.0499
+                                                                                                                                                          
+[Epoch 2/50] Train Loss: 0.0447 | Val Loss: 0.0328
+[Epoch 3/50] Train Loss: 0.0355 | Val Loss: 0.0268
+[Epoch 4/50] Train Loss: 0.0314 | Val Loss: 0.0266
+[Epoch 5/50] Train Loss: 0.0265 | Val Loss: 0.0224
+[Epoch 6/50] Train Loss: 0.0236 | Val Loss: 0.0207
+[Epoch 7/50] Train Loss: 0.0219 | Val Loss: 0.0199
+[Epoch 8/50] Train Loss: 0.0205 | Val Loss: 0.0228
+[Epoch 9/50] Train Loss: 0.0190 | Val Loss: 0.0169
+[Epoch 10/50] Train Loss: 0.0175 | Val Loss: 0.0229
+[Epoch 11/50] Train Loss: 0.0153 | Val Loss: 0.0181
+[Epoch 12/50] Train Loss: 0.0144 | Val Loss: 0.0156
+[Epoch 13/50] Train Loss: 0.0140 | Val Loss: 0.0161
+[Epoch 14/50] Train Loss: 0.0178 | Val Loss: 0.0150
+[Epoch 15/50] Train Loss: 0.0122 | Val Loss: 0.0138
+[Epoch 16/50] Train Loss: 0.0136 | Val Loss: 0.0200
+[Epoch 17/50] Train Loss: 0.0152 | Val Loss: 0.0131
+[Epoch 18/50] Train Loss: 0.0119 | Val Loss: 0.0128
+[Epoch 19/50] Train Loss: 0.0117 | Val Loss: 0.0125
+[Epoch 20/50] Train Loss: 0.0133 | Val Loss: 0.0274
+[Epoch 21/50] Train Loss: 0.0120 | Val Loss: 0.0159
+[Epoch 22/50] Train Loss: 0.0153 | Val Loss: 0.0124
+[Epoch 23/50] Train Loss: 0.0116 | Val Loss: 0.0245
+[Epoch 24/50] Train Loss: 0.0103 | Val Loss: 0.0122
+[Epoch 25/50] Train Loss: 0.0116 | Val Loss: 0.0140
+[Epoch 26/50] Train Loss: 0.0116 | Val Loss: 0.0120
+[Epoch 27/50] Train Loss: 0.0153 | Val Loss: 0.0135
+[Epoch 28/50] Train Loss: 0.0117 | Val Loss: 0.0127
+[Epoch 29/50] Train Loss: 0.0118 | Val Loss: 0.0126
+[Epoch 30/50] Train Loss: 0.0115 | Val Loss: 0.0140
+[Epoch 31/50] Train Loss: 0.0130 | Val Loss: 0.0115
+[Epoch 32/50] Train Loss: 0.0135 | Val Loss: 0.0134
+[Epoch 33/50] Train Loss: 0.0124 | Val Loss: 0.0220
+[Epoch 34/50] Train Loss: 0.0132 | Val Loss: 0.0176
+[Epoch 35/50] Train Loss: 0.0123 | Val Loss: 0.0113
+[Epoch 36/50] Train Loss: 0.0130 | Val Loss: 0.0160
+[Epoch 37/50] Train Loss: 0.0114 | Val Loss: 0.0119
+[Epoch 38/50] Train Loss: 0.0114 | Val Loss: 0.0112
+[Epoch 39/50] Train Loss: 0.0117 | Val Loss: 0.0119
+[Epoch 40/50] Train Loss: 0.0101 | Val Loss: 0.0158
+[Epoch 41/50] Train Loss: 0.0099 | Val Loss: 0.0113
+[Epoch 42/50] Train Loss: 0.0117 | Val Loss: 0.0120
+[Epoch 43/50] Train Loss: 0.0107 | Val Loss: 0.0129
+[Epoch 44/50] Train Loss: 0.0108 | Val Loss: 0.0130
+[Epoch 45/50] Train Loss: 0.0164 | Val Loss: 0.0149
+[Epoch 46/50] Train Loss: 0.0128 | Val Loss: 0.0126
+[Epoch 47/50] Train Loss: 0.0099 | Val Loss: 0.0116
+[Epoch 48/50] Train Loss: 0.0117 | Val Loss: 0.0243
+[Epoch 49/50] Train Loss: 0.0163 | Val Loss: 0.0179
+[Epoch 50/50] Train Loss: 0.0119 | Val Loss: 0.0148

@@ -1,0 +1,20 @@
+{"time":"2025-05-06T15:20:38.996212405+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-05-06T15:20:38.996221046+02:00","level":"INFO","msg":"created symlink","path":"/home/menzzz/2024/learning/RL/project/wandb/run-20250506_152038-aeczkk1i/logs/debug-core.log"}
+{"time":"2025-05-06T15:20:39.098575549+02:00","level":"INFO","msg":"created new stream","id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:39.098602756+02:00","level":"INFO","msg":"stream: started","id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:39.098711349+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:39.098822987+02:00","level":"INFO","msg":"sender: started","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:39.098912892+02:00","level":"INFO","msg":"handler: started","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:39.450591379+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-06T15:20:50.480117551+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-06T15:20:50.480665498+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-06T15:20:50.782279769+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-05-06T15:20:50.782300059+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-05-06T15:20:50.782306973+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-05-06T15:20:51.385351938+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-06T15:20:51.480963883+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history, summary, console logs","runtime_seconds":0.094407433}],"total_operations":1}}
+{"time":"2025-05-06T15:20:53.175863947+02:00","level":"INFO","msg":"stream: closing","id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:53.175878711+02:00","level":"INFO","msg":"handler: closed","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:53.175887385+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:53.175934268+02:00","level":"INFO","msg":"sender: closed","stream_id":"aeczkk1i"}
+{"time":"2025-05-06T15:20:53.175940845+02:00","level":"INFO","msg":"stream: closed","id":"aeczkk1i"}

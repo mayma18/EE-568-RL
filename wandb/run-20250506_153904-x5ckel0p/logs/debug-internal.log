@@ -1,0 +1,20 @@
+{"time":"2025-05-06T15:39:04.74818181+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-05-06T15:39:04.748193352+02:00","level":"INFO","msg":"created symlink","path":"/home/menzzz/2024/learning/RL/project/wandb/run-20250506_153904-x5ckel0p/logs/debug-core.log"}
+{"time":"2025-05-06T15:39:04.851394069+02:00","level":"INFO","msg":"created new stream","id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:04.851426621+02:00","level":"INFO","msg":"stream: started","id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:04.851557826+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:04.851627219+02:00","level":"INFO","msg":"sender: started","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:04.851699258+02:00","level":"INFO","msg":"handler: started","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:05.256489031+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-06T15:39:23.541454923+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-06T15:39:23.541840786+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-06T15:39:24.199028465+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-05-06T15:39:24.199048774+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-05-06T15:39:24.199055935+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-05-06T15:39:24.542274967+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.130277253,"progress":"590B/590B"},{"desc":"uploading output.log","runtime_seconds":0.130260515,"progress":"4.1KB/4.1KB"}],"total_operations":2}}
+{"time":"2025-05-06T15:39:24.654226328+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-06T15:39:26.059385944+02:00","level":"INFO","msg":"stream: closing","id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:26.059397851+02:00","level":"INFO","msg":"handler: closed","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:26.059402328+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:26.059414157+02:00","level":"INFO","msg":"sender: closed","stream_id":"x5ckel0p"}
+{"time":"2025-05-06T15:39:26.059434506+02:00","level":"INFO","msg":"stream: closed","id":"x5ckel0p"}

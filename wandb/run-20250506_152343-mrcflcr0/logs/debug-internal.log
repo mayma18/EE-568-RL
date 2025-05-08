@@ -1,0 +1,20 @@
+{"time":"2025-05-06T15:23:43.078129962+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-05-06T15:23:43.078142768+02:00","level":"INFO","msg":"created symlink","path":"/home/menzzz/2024/learning/RL/project/wandb/run-20250506_152343-mrcflcr0/logs/debug-core.log"}
+{"time":"2025-05-06T15:23:43.181804517+02:00","level":"INFO","msg":"created new stream","id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:43.181838631+02:00","level":"INFO","msg":"stream: started","id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:43.181982248+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:43.182012497+02:00","level":"INFO","msg":"handler: started","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:43.182124373+02:00","level":"INFO","msg":"sender: started","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:43.572092909+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-06T15:23:54.539765094+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-06T15:23:54.540174175+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-06T15:23:54.725321855+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-05-06T15:23:54.725339776+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-05-06T15:23:54.725345656+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-05-06T15:23:55.286331947+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-06T15:23:55.540502139+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history, summary, console logs","runtime_seconds":0.253855722}],"total_operations":1}}
+{"time":"2025-05-06T15:23:56.62858861+02:00","level":"INFO","msg":"stream: closing","id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:56.628614123+02:00","level":"INFO","msg":"handler: closed","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:56.628627371+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:56.628691418+02:00","level":"INFO","msg":"sender: closed","stream_id":"mrcflcr0"}
+{"time":"2025-05-06T15:23:56.628727209+02:00","level":"INFO","msg":"stream: closed","id":"mrcflcr0"}

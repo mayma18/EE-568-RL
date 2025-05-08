@@ -1,0 +1,1 @@
+{"rollout_reward":-142.59768581384262,"_timestamp":1.746538456065725e+09,"_runtime":52.537807723,"_step":49,"_wandb":{"runtime":52},"epoch":50,"train_loss":0.01522142081442667,"val_loss":0.007125935896327681}

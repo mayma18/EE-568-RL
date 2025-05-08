@@ -1,0 +1,54 @@
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/core.py:317: DeprecationWarning: [33mWARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/wrappers/step_api_compatibility.py:39: DeprecationWarning: [33mWARN: Initializing environment in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/gym/utils/passive_env_checker.py:241: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+[Epoch 1/50] Train Loss: 1.0602 | Val Loss: 0.0432
+Traceback (most recent call last):                                                                                                                                      
+[Epoch 2/50] Train Loss: 0.0410 | Val Loss: 0.0386
+[Epoch 3/50] Train Loss: 0.0363 | Val Loss: 0.0404
+[Epoch 4/50] Train Loss: 0.0304 | Val Loss: 0.0296
+[Epoch 5/50] Train Loss: 0.0264 | Val Loss: 0.0342
+[Epoch 6/50] Train Loss: 0.0242 | Val Loss: 0.0234
+[Epoch 7/50] Train Loss: 0.0217 | Val Loss: 0.0202
+[Epoch 8/50] Train Loss: 0.0219 | Val Loss: 0.0185
+[Epoch 9/50] Train Loss: 0.0194 | Val Loss: 0.0169
+[Epoch 10/50] Train Loss: 0.0186 | Val Loss: 0.0228
+[Epoch 11/50] Train Loss: 0.0172 | Val Loss: 0.0156
+[Epoch 12/50] Train Loss: 0.0175 | Val Loss: 0.0144
+[Epoch 13/50] Train Loss: 0.0161 | Val Loss: 0.0133
+[Epoch 14/50] Train Loss: 0.0136 | Val Loss: 0.0119
+[Epoch 15/50] Train Loss: 0.0143 | Val Loss: 0.0121
+[Epoch 16/50] Train Loss: 0.0123 | Val Loss: 0.0248
+[Epoch 17/50] Train Loss: 0.0135 | Val Loss: 0.0119
+[Epoch 18/50] Train Loss: 0.0120 | Val Loss: 0.0104
+[Epoch 19/50] Train Loss: 0.0159 | Val Loss: 0.0099
+[Epoch 20/50] Train Loss: 0.0123 | Val Loss: 0.0111
+[Epoch 21/50] Train Loss: 0.0122 | Val Loss: 0.0206
+[Epoch 22/50] Train Loss: 0.0123 | Val Loss: 0.0148
+[Epoch 23/50] Train Loss: 0.0134 | Val Loss: 0.0093
+[Epoch 24/50] Train Loss: 0.0151 | Val Loss: 0.0178
+[Epoch 25/50] Train Loss: 0.0128 | Val Loss: 0.0111
+[Epoch 26/50] Train Loss: 0.0134 | Val Loss: 0.0135
+[Epoch 27/50] Train Loss: 0.0121 | Val Loss: 0.0092
+[Epoch 28/50] Train Loss: 0.0138 | Val Loss: 0.0135
+  File "/home/menzzz/2024/learning/RL/project/policy/train.py", line 172, in <module>
+    train_dpo_pipeline(
+  File "/home/menzzz/2024/learning/RL/project/policy/train.py", line 96, in train_dpo_pipeline
+    log_ref_pref = ref_scorer(obs_pref, act_pref)
+  File "/home/menzzz/2024/learning/RL/project/policy/loss/dpo_loss.py", line 18, in __call__
+    dist = self.policy.get_distribution(obs_flat)
+  File "/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/stable_baselines3/common/policies.py", line 752, in get_distribution
+    return self._get_action_dist_from_latent(latent_pi)
+  File "/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/stable_baselines3/common/policies.py", line 694, in _get_action_dist_from_latent
+    return self.action_dist.proba_distribution(mean_actions, self.log_std)
+  File "/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/stable_baselines3/common/distributions.py", line 164, in proba_distribution
+    self.distribution = Normal(mean_actions, action_std)
+  File "/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/torch/distributions/normal.py", line 56, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/home/menzzz/anaconda3/envs/py38/lib/python3.8/site-packages/torch/distributions/distribution.py", line 61, in __init__
+    if not valid.all():
+KeyboardInterrupt

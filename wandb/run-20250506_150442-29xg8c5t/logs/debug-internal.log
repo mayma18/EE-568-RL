@@ -1,0 +1,20 @@
+{"time":"2025-05-06T15:04:42.320698517+02:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2025-05-06T15:04:42.320709854+02:00","level":"INFO","msg":"created symlink","path":"/home/menzzz/2024/learning/RL/project/wandb/run-20250506_150442-29xg8c5t/logs/debug-core.log"}
+{"time":"2025-05-06T15:04:42.424070642+02:00","level":"INFO","msg":"created new stream","id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:42.424107896+02:00","level":"INFO","msg":"stream: started","id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:42.424244636+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:42.424318667+02:00","level":"INFO","msg":"sender: started","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:42.424432136+02:00","level":"INFO","msg":"handler: started","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:42.859885438+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-06T15:04:53.645520813+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-06T15:04:53.646030081+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-06T15:04:53.839353376+02:00","level":"WARN","msg":"No job ingredients found, not creating job artifact"}
+{"time":"2025-05-06T15:04:53.839372756+02:00","level":"WARN","msg":"No source type found, not creating job artifact"}
+{"time":"2025-05-06T15:04:53.839379162+02:00","level":"INFO","msg":"sender: sendDefer: no job artifact to save"}
+{"time":"2025-05-06T15:04:54.405487577+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-06T15:04:54.646120556+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history, summary, console logs","runtime_seconds":0.240287047}],"total_operations":1}}
+{"time":"2025-05-06T15:04:55.759121985+02:00","level":"INFO","msg":"stream: closing","id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:55.759153603+02:00","level":"INFO","msg":"handler: closed","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:55.759161422+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:55.75921925+02:00","level":"INFO","msg":"sender: closed","stream_id":"29xg8c5t"}
+{"time":"2025-05-06T15:04:55.759225217+02:00","level":"INFO","msg":"stream: closed","id":"29xg8c5t"}
