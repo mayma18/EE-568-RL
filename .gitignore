@@ -5,3 +5,6 @@
 **/Training/
 **/*.mp4
 
+**CartPole-v1**
+
+checkpoints_CartPole_v1
