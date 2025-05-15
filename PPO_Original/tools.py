@@ -12,6 +12,14 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 from gymnasium.wrappers import RecordVideo
 
+from datetime import datetime
+from stable_baselines3.common.callbacks import EvalCallback, StopTrainingOnRewardThreshold
+from stable_baselines3.common.env_util import make_vec_env
+
+import glob, os, re, pandas as pd
+import random
+import json
+
 def plot_tensor_result(log_dir):
     # 读取所有标量
     ea = event_accumulator.EventAccumulator(
@@ -57,7 +65,7 @@ def plot_tensor_result(log_dir):
 
 
 
-def test_model(model_type, model_path, n_episodes=5, render=False, record=False, traj=False):
+def test_model(model_type, model_path, n_episodes=5, render=False, record=False, traj=False, file_prefix = None):
 
     print(model_path)
 
@@ -250,3 +258,146 @@ def plot_result(dirs, num_timesteps=None, xaxis='timesteps', task_name='', windo
 
     plt.tight_layout()
     plt.show()
+
+
+
+
+class RLHF_class:
+    def __init__(self, path):
+
+        # 初始化数据
+        self.path = path
+        self.reward_pi_1 = []
+        self.reward_pi_2 = []
+        self.traj_list_1 = []
+        self.traj_list_2 = []
+
+        self.traj_prefer = []
+        self.traj_reject = []
+        self.choose_probs = None
+
+        # 启动函数
+        self.read_pattern()             # 一次性扫 Pi-1, Pi-2, … 各类文件
+        self.compute_total_reward()     # 计算每个 Pi 的总奖励
+        self.comput_RLHF_prob(self.reward_pi_1, self.reward_pi_2)
+        self.store_trajectory_and_action_pair()         # 将轨迹数据存储到 traj_list_1, traj_list_2 中
+        self.select_prefer_and_reject_traj()
+        self.make_csv()                # 将数据存储到 csv 文件中
+
+    def read_pattern(self):
+
+        # 1. 扫描所有 Pi-*-trajectory-*.csv
+        pattern = os.path.join(self.path, 'Pi-*-trajectory-*.csv')
+        all_files = glob.glob(pattern)
+
+        # 2. 按前缀 Pi-1, Pi-2… 分组
+        groups = {}
+        for fp in all_files:
+            name = os.path.basename(fp)
+            m = re.match(r'(Pi-\d+)-trajectory-.*\.csv', name)
+            if not m:
+                continue
+            prefix = m.group(1)               # 比如 "Pi-1"
+            groups.setdefault(prefix, []).append(fp)
+
+        # 3. 为每个分组创建属性 data_base_1, data_base_2, …
+        for idx, prefix in enumerate(sorted(groups.keys()), start=1):
+            dfs = [pd.read_csv(f) for f in groups[prefix]]
+            setattr(self, f"data_base_{idx}", dfs)
+    
+    def compute_total_reward(self):
+
+        for data in self.data_base_1:
+            reward = np.sum(data['reward'])
+            self.reward_pi_1.append(reward)
+
+        for data in self.data_base_2:
+            reward = np.sum(data['reward'])
+            self.reward_pi_2.append(reward)
+    
+    def store_trajectory_and_action_pair(self):
+
+        self.traj_list_1 = []
+        self.traj_list_2 = []
+
+        for data in self.data_base_1:
+            
+            x         = np.array(data['x'])
+            x_dot     = np.array(data['x_dot'])
+            theta     = np.array(data['theta'])
+            theta_dot = np.array(data['theta_dot'])
+
+
+            state     = np.array([x, x_dot, theta, theta_dot])
+            action    = np.array(data['action'])
+
+            traj = []
+            for i in range(state.shape[1]):
+                traj.append({"state": state[:, i], "action": action[i]})
+            
+            self.traj_list_1.append(traj)
+        
+        
+        for data in self.data_base_2:
+                
+            x         = np.array(data['x'])
+            x_dot     = np.array(data['x_dot'])
+            theta     = np.array(data['theta'])
+            theta_dot = np.array(data['theta_dot'])
+
+            state     = np.array([x, x_dot, theta, theta_dot])
+            action    = np.array(data['action'])
+
+            traj = []
+            for i in range(state.shape[1]):
+                traj.append({"state": state[:, i], "action": action[i]})
+            
+            self.traj_list_2.append(traj)
+    
+    def comput_RLHF_prob(self, reward1, reward2):
+        """
+        计算 RLHF 概率
+        Compute RLHF probability
+        """
+        self.choose_probs = np.exp(reward1) / (np.exp(reward1) + np.exp(reward2))
+
+    def select_prefer_and_reject_traj(self)->None:
+        
+        for index, prob in enumerate(self.choose_probs):
+            sign = random.choices([0, 1], weights=[prob, 1 - prob])[0] # 选择 0 或 1 的概率
+            if sign == 0:
+                self.traj_prefer.append(self.traj_list_1[index])
+                self.traj_reject.append(self.traj_list_2[index])
+            else:
+                self.traj_prefer.append(self.traj_list_2[index])
+                self.traj_reject.append(self.traj_list_1[index])
+
+    def make_csv(self) -> None:
+        data = []
+        for i in range(len(self.traj_prefer)):
+            # 清洗 preferred 轨迹
+            clean_pref = []
+            for step in self.traj_prefer[i]:
+                clean_pref.append({
+                    'state': step['state'].tolist(),      # array -> list
+                    'action': int(step['action'])         # np.int64 -> int
+                })
+            # 清洗 rejected 轨迹
+            clean_rej = []
+            for step in self.traj_reject[i]:
+                clean_rej.append({
+                    'state': step['state'].tolist(),
+                    'action': int(step['action'])
+                })
+
+            data.append({
+                "episode": i,
+                # 把 list[dict] 序列化为标准 JSON
+                "preferred": json.dumps(clean_pref, ensure_ascii=False),
+                "rejected": json.dumps(clean_rej, ensure_ascii=False),
+            })
+
+        df = pd.DataFrame(data)
+        parent_dir = os.path.abspath(os.path.join(self.path, os.pardir))
+        df.to_csv(os.path.join(parent_dir, "RLHF_trajectory_pairs.csv"), index=False, encoding='utf-8')
+        print("RLHF_trajectory_pairs.csv 已保存到：", parent_dir)

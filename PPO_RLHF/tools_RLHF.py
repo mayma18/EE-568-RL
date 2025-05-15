@@ -54,7 +54,7 @@ class Data_Class:
         self.load_data(path)
         self.convert(self.trajs_prefer_list, self.traj_prefer_list_list_tensor)   # data convert 数据转换
         self.convert(self.trajs_reject_list, self.traj_reject_list_list_tensor)
-        print("Data loaded successfully")
+        print("Data loaded from: ", path)
 
     def load_data(self, path):
         data = pd.read_csv(path)
