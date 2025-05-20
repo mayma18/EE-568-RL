@@ -77,8 +77,10 @@ def test_model(model_type, model_path, n_episodes=5, render=False, record=False,
     os.makedirs(video_path, exist_ok=True)
 
     # 根据模型名设定前缀
-    if path_list[-1] == "model_full_training.zip" or path_list[-1] == "model_full_training":
+    if path_list[-1] == "Pi-1.zip" or path_list[-1] == "Pi-1" or path_list[-1] == "pi-1":
         name_prefix_ = "Pi-1"  
+    elif path_list[-1] == "Pi-2-RLHF.zip" or path_list[-1] == "Pi-2-RLHF":
+        name_prefix_ = "Pi-2-RLHF"
     else: 
         name_prefix_ = "Pi-2"
 
@@ -262,7 +264,7 @@ def plot_result(dirs, num_timesteps=None, xaxis='timesteps', task_name='', windo
 
 
 
-class RLHF_class:
+class Trajectory_class:
     def __init__(self, path):
 
         # 初始化数据

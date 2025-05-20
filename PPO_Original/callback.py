@@ -23,7 +23,8 @@ class SaveOnRewardThreshold(BaseCallback):
                 if ep_reward >= self.threshold and not self._already_saved:
                     # 保存模型
                     os.makedirs(self.save_path, exist_ok=True)
-                    path = os.path.join(self.save_path, f"model_at_reward_{int(self.threshold)}.zip")
+                    # path = os.path.join(self.save_path, f"model_at_reward_{int(self.threshold)}.zip")
+                    path = os.path.join(self.save_path, "Pi-2.zip")
                     self.model.save(path)
                     if self.verbose > 0:
                         print(f"[SaveOnRewardThreshold] reward={ep_reward:.2f} ≥ {self.threshold}, saved to {path}")
