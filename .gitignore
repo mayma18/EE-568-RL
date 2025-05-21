@@ -4,3 +4,7 @@ checkpoints_CartPole_v1
 Training
 PPO_Original
 PPO_RLHF
+
+.pyc
+
+.vscode
